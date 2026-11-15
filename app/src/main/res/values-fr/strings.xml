@@ -1227,6 +1227,8 @@
     <string name="settings_emulation_contents_manager_subtitle">Installer des composants supplémentaires (.wcp)</string>
     <string name="settings_emulation_wine_proton_manager_title">Gestionnaire Wine/Proton</string>
     <string name="settings_emulation_wine_proton_manager_subtitle">Importer des versions Wine/Proton personnalisées (Bionic uniquement)</string>
+    <string name="settings_pause_on_phone_call_title">Mettre en pause lors d\'un appel</string>
+    <string name="settings_pause_on_phone_call_subtitle">Mettre automatiquement le jeu en pause lors de la réception d\'un appel entrant</string>
 
     <!-- Settings: Debug Group -->
     <string name="settings_debug_title">Débogage</string>

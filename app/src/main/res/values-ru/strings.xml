@@ -1226,6 +1226,9 @@ https://gamenative.app
     <string name="settings_emulation_default_config_subtitle">Начальные настройки контейнера для каждой игры (не влияет на уже установленные игры)</string>
     <string name="settings_emulation_default_config_title">Изменить конфигурацию по умолчанию</string>
     <string name="settings_emulation_driver_manager_subtitle">Установить или удалить пользовательские пакеты графических драйверов</string>
+    <string name="settings_pause_on_phone_call_title">Пауза при входящем звонке</string>
+    <string name="settings_pause_on_phone_call_subtitle">Автоматически ставить игру на паузу при входящем телефонном звонке</string>
+
     <!-- Settings: Performance Group -->
     <string name="settings_performance_title">Производительность</string>
     <string name="settings_performance_power_control_title">Управление производительностью</string>

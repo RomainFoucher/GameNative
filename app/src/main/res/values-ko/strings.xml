@@ -2257,6 +2257,9 @@
     <string name="settings_emulation_fex_code_map_upload_subtitle">게임 실행 파일에서 실행된 코드 블록 정보를 보냅니다. 개인 데이터는 포함되지 않습니다. 보통 게임당 1MB 미만.</string>
     <string name="settings_emulation_fex_code_cache_use_title">FEX 코드 캐시 사용 (실험적)</string>
     <string name="settings_emulation_fex_code_cache_use_subtitle">실행 속도를 높이고 CPU 사용량을 줄일 수 있지만, 게임당 수백 MB를 사용할 수 있으며 게임 실행 시 추가 단계가 생깁니다</string>
+    <string name="settings_pause_on_phone_call_title">전화 수신 시 일시정지</string>
+    <string name="settings_pause_on_phone_call_subtitle">전화가 걸려올 때 게임을 자동으로 일시정지합니다</string>
+
     <string name="download_no_wifi">Wi-Fi 또는 LAN에 연결되어 있지 않습니다</string>
     <string name="download_paused_wifi">다운로드 일시 중지됨 - Wi-Fi 또는 LAN 연결 대기 중</string>
     <string name="main_downloading_entry">%s 다운로드 중</string>
