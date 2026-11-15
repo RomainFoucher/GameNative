@@ -1220,6 +1220,8 @@
     <string name="settings_emulation_contents_manager_subtitle">Zainstaluj dodatkowe komponenty (.wcp)</string>
     <string name="settings_emulation_wine_proton_manager_title">Menedżer Wine/Proton</string>
     <string name="settings_emulation_wine_proton_manager_subtitle">Importuj niestandardowe wersje Wine/Proton (tylko Bionic)</string>
+    <string name="settings_pause_on_phone_call_title">Pauza podczas połączenia</string>
+    <string name="settings_pause_on_phone_call_subtitle">Automatycznie wstrzymaj grę po odebraniu połączenia przychodzącego</string>
 
     <!-- Settings: Debug Group -->
     <string name="settings_debug_title">Debugowanie</string>

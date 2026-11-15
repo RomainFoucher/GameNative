@@ -1194,6 +1194,8 @@
     <string name="settings_emulation_contents_manager_subtitle">安装附加组件（.wcp）</string>
     <string name="settings_emulation_wine_proton_manager_title">Wine/Proton 管理器</string>
     <string name="settings_emulation_wine_proton_manager_subtitle">导入自定义的 Wine/Proton 版本（仅限 Bionic）</string>
+    <string name="settings_pause_on_phone_call_title">来电时暂停</string>
+    <string name="settings_pause_on_phone_call_subtitle">收到来电时自动暂停游戏</string>
 
     <!-- 设置：调试组 -->
     <string name="settings_debug_title">调试</string>

@@ -1023,6 +1023,8 @@
     <string name="settings_emulation_driver_manager_subtitle">Installér eller fjern tilpassede grafikdriverpakker</string>
     <string name="settings_emulation_contents_manager_title">Indholdshåndtering</string>
     <string name="settings_emulation_contents_manager_subtitle">Installér yderligere komponenter (.wcp)</string>
+    <string name="settings_pause_on_phone_call_title">Pause ved telefonopkald</string>
+    <string name="settings_pause_on_phone_call_subtitle">Sæt spillet automatisk på pause ved modtagelse af et indkommende telefonopkald</string>
 
     <!-- Settings: Debug Group -->
     <string name="settings_debug_title">Debug</string>

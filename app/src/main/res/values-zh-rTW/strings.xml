@@ -1196,6 +1196,8 @@
     <string name="settings_emulation_contents_manager_subtitle">安裝附加元件 (.wcp)</string>
     <string name="settings_emulation_wine_proton_manager_title">Wine/Proton 管理員</string>
     <string name="settings_emulation_wine_proton_manager_subtitle">匯入自訂的 Wine/Proton 版本 (僅限 Bionic)</string>
+    <string name="settings_pause_on_phone_call_title">來電時暫停</string>
+    <string name="settings_pause_on_phone_call_subtitle">收到來電時自動暫停遊戲</string>
 
     <!-- Settings: Debug Group -->
     <string name="settings_debug_title">除錯</string>
