@@ -49,6 +49,7 @@ import androidx.lifecycle.lifecycleScope
 import app.gamenative.theme.ThemeManager
 import kotlinx.coroutines.delay
 import app.gamenative.PluviaApp
+import app.gamenative.utils.PhoneCallObserver
 import app.gamenative.R
 import app.gamenative.service.SteamService
 import app.gamenative.ui.model.MainViewModel
@@ -474,6 +475,11 @@ class ImmersiveXrActivity : androidx.activity.ComponentActivity() {
         viewModel.exitSteamApp(this, runningAppId) { recreate() }
     }
 
+    override fun onStart() {
+        super.onStart()
+        PhoneCallObserver.start(this)
+    }
+
     override fun onResume() {
         super.onResume()
         PluviaApp.isImmersiveActivityResumed = true
@@ -504,6 +510,11 @@ class ImmersiveXrActivity : androidx.activity.ComponentActivity() {
             PluviaApp.xEnvironment?.onPause()
         }
         super.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        PhoneCallObserver.stop()
     }
 
     override fun onDestroy() {

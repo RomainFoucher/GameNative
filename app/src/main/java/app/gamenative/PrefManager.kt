@@ -1895,6 +1895,11 @@ object PrefManager {
         get() = getPref(AUTO_APPLY_KNOWN_CONFIG, true)
         set(value) = setPref(AUTO_APPLY_KNOWN_CONFIG, value)
 
+    private val PAUSE_ON_PHONE_CALL = booleanPreferencesKey("pause_on_phone_call")
+    var pauseOnPhoneCall: Boolean
+        get() = getPref(PAUSE_ON_PHONE_CALL, false)
+        set(value) = setPref(PAUSE_ON_PHONE_CALL, value)
+
     // Game compatibility cache (JSON string)
     private val GAME_COMPATIBILITY_CACHE = stringPreferencesKey("game_compatibility_cache")
     var gameCompatibilityCache: String
