@@ -59,6 +59,7 @@ import app.gamenative.utils.IconDecoder
 import app.gamenative.utils.IntentLaunchManager
 import app.gamenative.utils.LauncherOrientation
 import app.gamenative.utils.LocaleHelper
+import app.gamenative.utils.PhoneCallObserver
 import app.gamenative.ui.util.SnackbarManager
 import com.posthog.PostHog
 import com.skydoves.landscapist.coil.LocalCoilImageLoader
@@ -549,6 +550,11 @@ class MainActivity : ComponentActivity() {
         return true
     }
 
+    override fun onStart() {
+        super.onStart()
+        PhoneCallObserver.start(this)
+    }
+
     override fun onResume() {
         super.onResume()
         PowerManager.resume()
@@ -648,6 +654,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onStop() {
         super.onStop()
+        PhoneCallObserver.stop()
         orientationSensorListener?.disable()
         orientationSensorListener = null
         // enable auto-stop behavior if backgrounded

@@ -1,6 +1,10 @@
 package app.gamenative.ui.screen.settings
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.content.res.Configuration
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -11,6 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.content.ContextCompat
 import app.gamenative.PrefManager
 import app.gamenative.R
 import app.gamenative.ui.component.dialog.Box64PresetsDialog
@@ -21,6 +26,7 @@ import app.gamenative.ui.theme.PluviaTheme
 import app.gamenative.ui.theme.settingsTileColors
 import app.gamenative.ui.theme.settingsTileColorsAlt
 import app.gamenative.utils.ContainerUtils
+import app.gamenative.utils.PhoneCallObserver
 import com.alorma.compose.settings.ui.SettingsGroup
 import app.gamenative.ui.component.settings.SettingsMenuLink
 import app.gamenative.ui.component.settings.SettingsSwitch
@@ -125,6 +131,50 @@ fun SettingsGroupEmulation() {
             onCheckedChange = {
                 PrefManager.fexCodeCacheUseEnabled = it
                 fexCodeCacheUseEnabled = it && fexCodeMapUploadEnabled
+            },
+        )
+
+        val context = LocalContext.current
+        var pauseOnPhoneCall by rememberSaveable { mutableStateOf(PrefManager.pauseOnPhoneCall) }
+
+        val phonePermissionLauncher = rememberLauncherForActivityResult(
+            contract = ActivityResultContracts.RequestPermission(),
+        ) { isGranted ->
+            if (isGranted) {
+                pauseOnPhoneCall = true
+                PrefManager.pauseOnPhoneCall = true
+                PhoneCallObserver.start(context)
+            } else {
+                pauseOnPhoneCall = false
+                PrefManager.pauseOnPhoneCall = false
+                PhoneCallObserver.stop()
+            }
+        }
+
+        SettingsSwitch(
+            colors = settingsTileColorsAlt(),
+            state = pauseOnPhoneCall,
+            title = { Text(text = stringResource(R.string.settings_pause_on_phone_call_title)) },
+            subtitle = { Text(text = stringResource(R.string.settings_pause_on_phone_call_subtitle)) },
+            onCheckedChange = { checked ->
+                if (checked) {
+                    val hasPermission = ContextCompat.checkSelfPermission(
+                        context,
+                        Manifest.permission.READ_PHONE_STATE,
+                    ) == PackageManager.PERMISSION_GRANTED
+
+                    if (hasPermission) {
+                        pauseOnPhoneCall = true
+                        PrefManager.pauseOnPhoneCall = true
+                        PhoneCallObserver.start(context)
+                    } else {
+                        phonePermissionLauncher.launch(Manifest.permission.READ_PHONE_STATE)
+                    }
+                } else {
+                    pauseOnPhoneCall = false
+                    PrefManager.pauseOnPhoneCall = false
+                    PhoneCallObserver.stop()
+                }
             },
         )
         SettingsMenuLink(
